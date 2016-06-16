@@ -17,11 +17,11 @@ public class SpinnerTag extends ValidateBoxTag {
 
 	private static final long serialVersionUID = 3703178763442495444L;
 
-	private Integer width;
-	private Integer height;
-	private String value;
-	private String min;
-	private String max;
+	private String width;
+	private String height;
+	private Double value;
+	private Integer min;
+	private Integer max;
 	private Double increment;
 	private Boolean editable;
 	private Boolean disabled;
@@ -57,43 +57,43 @@ public class SpinnerTag extends ValidateBoxTag {
 		return map;
 	}
 
-	public Integer getWidth() {
+	public String getWidth() {
 		return width;
 	}
 
-	public void setWidth(Integer width) {
+	public void setWidth(String width) {
 		this.width = width;
 	}
 
-	public Integer getHeight() {
+	public String getHeight() {
 		return height;
 	}
 
-	public void setHeight(Integer height) {
+	public void setHeight(String height) {
 		this.height = height;
 	}
 
-	public String getValue() {
+	public Double getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	public void setValue(Double value) {
 		this.value = value;
 	}
 
-	public String getMin() {
+	public Integer getMin() {
 		return min;
 	}
 
-	public void setMin(String min) {
+	public void setMin(Integer min) {
 		this.min = min;
 	}
 
-	public String getMax() {
+	public Integer getMax() {
 		return max;
 	}
 
-	public void setMax(String max) {
+	public void setMax(Integer max) {
 		this.max = max;
 	}
 

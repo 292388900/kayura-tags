@@ -32,6 +32,12 @@ public class TreeNode {
 		this.attributes = new HashMap<String, Object>();
 	}
 
+	public TreeNode(String id, String text) {
+		this();
+		this.id = id;
+		this.text = text;
+	}
+
 	public String getId() {
 		return id;
 	}
