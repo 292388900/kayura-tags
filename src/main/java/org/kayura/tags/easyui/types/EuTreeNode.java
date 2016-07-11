@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * @author liangxia@live.com
  */
-public class TreeNode {
+public class EuTreeNode {
 
 	public static final String STATE_OPEN = "open";
 	public static final String STATE_CLOSED = "closed";
@@ -24,15 +24,15 @@ public class TreeNode {
 	private String iconCls;
 	private Boolean checked;
 	private String state;
-	private List<TreeNode> children;
+	private List<EuTreeNode> children;
 	private Map<String, Object> attributes;
 
-	public TreeNode() {
-		this.children = new ArrayList<TreeNode>();
+	public EuTreeNode() {
+		this.children = new ArrayList<EuTreeNode>();
 		this.attributes = new HashMap<String, Object>();
 	}
 
-	public TreeNode(String id, String text) {
+	public EuTreeNode(String id, String text) {
 		this();
 		this.id = id;
 		this.text = text;
@@ -78,22 +78,22 @@ public class TreeNode {
 		this.state = state;
 	}
 
-	public List<TreeNode> getChildren() {
+	public List<EuTreeNode> getChildren() {
 		return children;
 	}
 
-	public void addNodes(List<TreeNode> nodes) {
+	public void addNodes(List<EuTreeNode> nodes) {
 
 		if (nodes != null) {
-			for (TreeNode n : nodes) {
+			for (EuTreeNode n : nodes) {
 				addNode(n);
 			}
 		}
 	}
 
-	public void addNode(TreeNode node) {
+	public void addNode(EuTreeNode node) {
 		if (this.children == null) {
-			this.children = new ArrayList<TreeNode>();
+			this.children = new ArrayList<EuTreeNode>();
 		}
 		this.children.add(node);
 	}
