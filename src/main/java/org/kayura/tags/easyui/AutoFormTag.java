@@ -43,8 +43,7 @@ public class AutoFormTag extends SimpleTagSupport {
 
 				if (fa.isWriteable()) {
 
-					switch (fa.getType()) {
-					case TYPE_STRING:
+					if (TYPE_STRING.equals(fa.getType())) {
 						out.write("<input class='easyui-textbox' name='");
 						out.write(fa.getId());
 						out.write("' style='width:80%' value='");
@@ -56,8 +55,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_TEXT : 
+					} else if (TYPE_TEXT.equals(fa.getType())) {
 						out.write("<input class='easyui-textbox' name='");
 						out.write(fa.getId());
 						out.write("' style='width:80%;height:50px' multiline='true' value='");
@@ -69,8 +67,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_DATE:
+					} else if (TYPE_DATE.equals(fa.getType())) {
 						out.write("<input class='easyui-datebox' name='");
 						out.write(fa.getId());
 						out.write("' style='width:150px' value='");
@@ -82,8 +79,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_DATETIME:
+					} else if (TYPE_DATETIME.equals(fa.getType())) {
 						out.write("<input class='easyui-datetimebox' name='");
 						out.write(fa.getId());
 						out.write("' style='width:150px' value='");
@@ -95,8 +91,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_TIME:
+					} else if (TYPE_TIME.equals(fa.getType())) {
 						out.write("<input class='easyui-timespinner' name='");
 						out.write(fa.getId());
 						out.write("' style='width:120px' value='");
@@ -108,8 +103,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_NUMBER:
+					} else if (TYPE_NUMBER.equals(fa.getType())) {
 						out.write("<input class='easyui-numberbox' name='");
 						out.write(fa.getId());
 						out.write("' style='width:120px' value='");
@@ -121,8 +115,7 @@ public class AutoFormTag extends SimpleTagSupport {
 							out.write("required='required'");
 						}
 						out.write(" />");
-						break;
-					case TYPE_ENUM:
+					} else if (TYPE_ENUM.equals(fa.getType())) {
 						out.write("<select class='easyui-combobox' style='width:auto;' name='");
 						out.write(fa.getId());
 						out.write("' data-options=\"panelHeight:'auto'");
@@ -141,12 +134,8 @@ public class AutoFormTag extends SimpleTagSupport {
 						}
 
 						out.write("</select>");
-						break;
-					default:
-						break;
 					}
 				} else {
-
 					out.write(fa.getValue());
 				}
 
